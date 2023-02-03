@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.svg";
-import Hamburger from "../assets/icons/Hamburger.svg";
+import Hamburger from "../assets/icons/hamburger.svg";
 import Close from "../assets/icons/close.svg";
 import Button from "./Button";
 
