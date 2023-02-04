@@ -5,13 +5,15 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Careers from "./pages/careers";
 import Locations from "./pages/locations";
-import './index.css'
+import "./index.css";
 import SignUpbanner from "./components/SignUpBanner";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <div className="container">
         <Routes>
@@ -22,7 +24,7 @@ export default function App() {
         </Routes>
       </div>
       <SignUpbanner />
-      <Footer/>
+      <Footer />
     </>
   );
 }
