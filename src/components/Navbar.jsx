@@ -16,11 +16,19 @@ export default function Navbar() {
     <nav className="relative w-[100%] h-16 pl-8 flex items-center justify-start md:px-[40px] md:py-[22px] md:h-[96px] lg:max-w-[1440px] lg:mx-auto">
       <div className="order-2 md:order-1">
         <div>
-          <img
-            className="w-[75.5px] md:w-[107px]"
-            src={Logo}
-            alt="Scoot Logo"
-          />
+          <Link
+            onClick={() => {
+              setIsExpanded(false);
+            }}
+            to="/"
+          >
+            <img
+              className="w-[75.5px] md:w-[107px]"
+              src={Logo}
+              alt="Scoot Logo"
+            />
+          </Link>
+       
         </div>
       </div>
       <div className="order-1 mr-[99px] md:hidden">
@@ -36,43 +44,23 @@ export default function Navbar() {
       >
         <ul className="font-space flex gap-6 flex-col text-lg md:flex-row">
           <li>
-            <Link
-              onClick={() => {
-                setIsExpanded(!isExpanded);
-              }}
-              to="/about"
-            >
+            <Link onClick={toggleMenu} to="/about">
               About
             </Link>
           </li>
           <li>
-            <Link
-              onClick={() => {
-                setIsExpanded(!isExpanded);
-              }}
-              to="/locations"
-            >
+            <Link onClick={toggleMenu} to="/locations">
               Locations
             </Link>
           </li>
           <li>
-            <Link
-              onClick={() => {
-                setIsExpanded(!isExpanded);
-              }}
-              to="/careers"
-            >
+            <Link onClick={toggleMenu} to="/careers">
               Careers
             </Link>
           </li>
         </ul>
-        <Link to='/'>
-          <Button
-            onClick={() => {
-              setIsExpanded(!isExpanded);
-            }}
-            className="mb-6"
-          >
+        <Link to="/">
+          <Button onClick={toggleMenu} className="mb-6">
             Get Scootin
           </Button>
         </Link>

@@ -4,9 +4,11 @@ import Tech from "../assets/images/our-tech.jpg";
 import Integrity from "../assets/images/our-integrity.jpg";
 import Community from "../assets/images/our-community.jpg";
 import Accordion from "../components/Accordion";
+import Arrow from "../assets/patterns/right-arrow.svg";
+import { faq, safeDriving } from "../faq-content";
 
 export default function About() {
-  return (
+    return (
     <div className="flex flex-col gap-14">
       <div className="flex items-center justify-center bg-about-mobile h-[160px]">
         <h1 className="font-space text-mobile-h1 text-snow ">About</h1>
@@ -14,11 +16,11 @@ export default function About() {
       {/**
         container for about content
        */}
-      <div className="flex flex-col gap-32 px-8">
+      <div className="flex flex-col gap-32 px-8 overflow-x-hidden">
         {/**
         Mobility Content
        */}
-        <div className="flex flex-col gap-14 items-center text-center">
+        <div className="relative flex flex-col gap-14 items-center text-center">
           <img
             className="rounded-full w-[311px]"
             src={DigitalEra}
@@ -34,12 +36,19 @@ export default function About() {
               at your fingertips.
             </p>
           </div>
+          <div className="absolute rotate-180 top-32 right-[-115px]  ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="735" height="138"><g fill="none" fillRule="evenodd" stroke="#FCB72B" strokeLinejoin="bevel" stroke-width="15"><path d="M407.952 145.444l38.426-38.426-38.426-38.426"/><path d="M0 8h270.115v99.369h176.263"/></g></svg>
+          </div>
+          {/* <img className="absolute rotate-180 top-40 left-10 " src={Arrow} alt="" /> */}
         </div>
 
         {/**
         Urban Content
        */}
-        <div className="flex flex-col gap-14 items-center text-center">
+        <div className="relative flex flex-col gap-14 items-center text-center">
+        <div className="absolute top-0 left-[-125px]">
+          <svg xmlns="http://www.w3.org/2000/svg" width="735" height="138"><g fill="none" fillRule="evenodd" stroke="#FCB72B" strokeLinejoin="bevel" strokeWidth="15"><path d="M407.952 145.444l38.426-38.426-38.426-38.426"/><path d="M0 8h270.115v99.369h176.263"/></g></svg>
+          </div>
           <img
             className="rounded-full w-[311px]"
             src={Urban}
@@ -92,7 +101,8 @@ export default function About() {
           <div className="text-center flex flex-col gap-7">
             <h3 className="font-space text-mobile-h3">Our integrity</h3>
             <p className="font-lexend text-mobile-p">
-            We are fully committed to deliver a great yet safe, sustainable micro-mobility experience in every city we serve.
+              We are fully committed to deliver a great yet safe, sustainable
+              micro-mobility experience in every city we serve.
             </p>
           </div>
         </div>
@@ -109,7 +119,8 @@ export default function About() {
           <div className="text-center flex flex-col gap-7">
             <h3 className="font-space text-mobile-h3">Our community</h3>
             <p className="font-lexend text-mobile-p">
-            We support every community we serve. All workers are paid a living wage based on their location and are Scoot employees.
+              We support every community we serve. All workers are paid a living
+              wage based on their location and are Scoot employees.
             </p>
           </div>
         </div>
@@ -117,10 +128,25 @@ export default function About() {
       </div>
       {/**Values End */}
 
-      <h2 className="font-space text-center text-mobile-h2 mb-[48px]">FAQs</h2>
+      <h2 className="font-space text-center text-mobile-h2       ">FAQs</h2>
       <div className="px-8">
-        <h3 className="font-space text-center text-mobile-h3 mb-8">How it works</h3>
-        <Accordion />
+        <div className="mb-12">
+          <h3 className="font-space text-center text-mobile-h3 mb-8">
+            How it works
+          </h3>
+          {faq.map(({ title, content }) => (
+            <Accordion title={title} content={content} />
+          ))}
+        </div>
+
+        <div className="mb-12">
+          <h3 className="font-space text-center text-mobile-h3 mb-8">
+            Safe Driving
+          </h3>
+          {safeDriving.map(({ title, content }) => (
+            <Accordion title={title} content={content} />
+          ))}
+        </div>
       </div>
       {/**Container end */}
     </div>

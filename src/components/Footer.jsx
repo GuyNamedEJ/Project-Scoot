@@ -6,7 +6,18 @@ import Logo from '../assets/logo-white.svg'
 export default function Footer() {
   return (
     <footer className="flex flex-col items-center justify-center bg-footer h-[438px]">
-    <img className="mb-11" src={Logo} alt="" />
+    <Link className="mb-11"
+            onClick={() => {
+              setIsExpanded(false);
+            }}
+            to="/"
+          >
+            <img
+              className="w-[75.5px] md:w-[107px]"
+              src={Logo}
+              alt="Scoot Logo"
+            />
+          </Link>
       <ul className="mb-20 font-space text-center text-dim-grey flex gap-6 flex-col text-lg md:flex-row">
         <li>
           <Link to="/about">About</Link>
