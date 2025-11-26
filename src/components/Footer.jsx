@@ -28,6 +28,18 @@ export default function Footer() {
         <li>
           <Link to="/careers">Careers</Link>
         </li>
+
+        <li>
+          <Link to="/careers">Careers</Link>
+        </li>
+
+        <li>
+          <Link to="/careers">Careers</Link>
+        </li>
+
+        <li>
+          <Link to="/careers">Careers</Link>
+        </li>
       </ul>
       <ul className="flex gap-6 ">
         <li><img src={Facebook} alt="" /></li>
