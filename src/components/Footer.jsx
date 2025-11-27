@@ -30,15 +30,11 @@ export default function Footer() {
         </li>
 
         <li>
-          <Link to="/careers">Careers</Link>
+          <Link to="/careers">Contact</Link>
         </li>
 
         <li>
-          <Link to="/careers">Careers</Link>
-        </li>
-
-        <li>
-          <Link to="/careers">Careers</Link>
+          <Link to="/careers">Media Gallery</Link>
         </li>
       </ul>
       <ul className="flex gap-6 ">
